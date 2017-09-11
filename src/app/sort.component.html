@@ -1,0 +1,9 @@
+<div class="sort">
+    <span>sort by</span>
+    <div calss="list_container">
+        <div class="list" (click)="onClick()" [class.focused]="focus == true">{{sorting}}</div>
+        <div [class.showlist] = "focus == true" class="slide_list">
+            <div *ngFor="let sort of sorts" class="slideElem" (click)="changeSort(sort)">{{sort}}</div>
+        </div>
+    </div>
+</div>

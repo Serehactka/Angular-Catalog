@@ -1,0 +1,38 @@
+@mixin box-sizing($bs: border-box) {
+    -webkit-box-sizing: $bs;
+    -moz-box-sizing: $bs;
+    -o-box-sizing: $bs;
+    box-sizing: $bs;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    @include box-sizing(border-box);
+}
+
+@font-face {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: normal;
+    src: local(cssFonts/quicksand-bold-webfont);
+}
+
+.header {
+    text-align: center;
+}
+
+.logo-image {
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    margin: 20px;
+    
+    img {
+        width: 100%;
+    }
+}
+
+.invisible {
+    display: none;
+}

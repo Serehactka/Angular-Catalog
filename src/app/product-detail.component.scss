@@ -1,0 +1,151 @@
+@mixin box-sizing($bs: border-box) {
+    -webkit-box-sizing: $bs;
+    -moz-box-sizing: $bs;
+    -o-box-sizing: $bs;
+    box-sizing: $bs;
+}
+
+@mixin transform($tr) {
+    -webkit-transform: $tr;
+    -moz-transform: $tr;
+    -ms-transform: $tr;
+    -o-transform: $tr;
+    transform: $tr;
+}
+
+$browny-color: #ADA07B;
+
+@font-face {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: normal;
+    src: local(''), url("quicksand-bold-webfont.woff") format("woff");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    @include box-sizing(border-box);
+    font-family: "Quicksand";
+}
+
+.back {
+    padding: 45px 0;
+    background: #F4F6F7;
+    margin-bottom: 60px;
+
+    .container {
+        max-width: 1140px;
+        width: 100%;
+        margin: 0 auto;
+
+        button {
+            padding: 3px 5px;
+            background: transparent;
+            outline: none;
+            border: 0;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: background 50ms linear;
+            cursor: pointer;
+
+            &:hover {
+                background: #000;
+                color: #fff;
+            }
+
+            span {
+                display: inline-block;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+.product {
+    position: relative;
+    max-width: 1140px;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+
+    div.title_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    div.line {
+        min-width: 85%;
+        border: 1px solid #D5D5D5;
+        //box-sizing: border-box;
+    }
+
+    span {
+        text-transform: uppercase;
+    }
+
+    .details {
+        width: 100%;
+        padding: 7% 0;
+        margin: 60px 0 20px;
+        background: #F4F6F7; 
+        border: 4px solid $browny-color;
+
+        .image {
+            position: relative;
+            display: inline-block;
+            width: 75%;
+
+            img {
+                max-width: 100%;
+                max-height: 1080px;
+            }
+        }
+
+        .visser {
+            display: inline-block;
+            vertical-align: top;
+            
+            .column {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .values {
+                text-align: right;
+
+                .price {
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                }
+
+                .color {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 100%;
+                    margin: 0 0px 10px 3px;
+                }
+
+                .size {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    font-size: 20px;
+                }
+            }
+
+            .prop {
+                margin-left: 20px;
+                text-align: left;
+
+                .text {
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+}

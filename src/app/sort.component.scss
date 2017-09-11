@@ -1,0 +1,111 @@
+@mixin box-sizing($bs: border-box) {
+    -webkit-box-sizing: $bs;
+    -moz-box-sizing: $bs;
+    -o-box-sizing: $bs;
+    box-sizing: $bs;
+}
+
+@mixin transform($tr) {
+    -webkit-transform: $tr;
+    -moz-transform: $tr;
+    -ms-transform: $tr;
+    -o-transform: $tr;
+    transform: $tr;
+}
+
+$browny-color: #ADA07B;
+
+@font-face {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: normal;
+    src: local(''), url("quicksand-bold-webfont.woff") format("woff");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    @include box-sizing(border-box);
+    font-family: "Quicksand";
+}
+
+.sort {
+    max-width: 1140px;
+    width: 100%;
+    margin: 30px auto;
+
+    span,
+    div {
+        display: inline-block;
+        text-transform: uppercase;
+        margin-right: 20px;
+        transition: all 0.1s linear;
+    }
+
+    div.list_container {
+        position: relative;
+    }
+
+    div.list {
+        padding: 2px;
+        cursor: default;
+
+        font: {
+            size: 12px;
+            weight: 300;
+        }
+        //border: 1px solid #000;
+
+        &:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        &:after {
+            content: "<";
+            @include transform(rotate(-90deg));
+            display: inline-block;
+            margin-left: 3px;
+        }
+
+        &.focused {
+            background: #000;
+            color: #fff;
+
+             &:after {
+                content: "<";
+                @include transform(rotate(90deg));
+                display: inline-block;
+            }
+        }
+    }
+
+    div.slide_list {
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.1s linear;
+        z-index: 1000;
+
+        &.showlist {
+            height: initial;
+        }
+
+        div.slideElem {
+            display: block;
+            padding: 2px;
+            cursor: default;
+            
+            font: {
+                size: 12px;
+                weight: 300;
+            }
+            //border: 1px solid #000;
+
+            &:hover {
+                background: #000;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: normal;
+  src: local(""), url("quicksand-bold-webfont.woff") format("woff"); }
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Quicksand"; }
+
+.back {
+  padding: 45px 0;
+  background: #F4F6F7;
+  margin-bottom: 60px; }
+  .back .container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto; }
+    .back .container button {
+      padding: 3px 5px;
+      background: transparent;
+      outline: none;
+      border: 0;
+      text-transform: uppercase;
+      font-size: 16px;
+      transition: background 50ms linear;
+      cursor: pointer; }
+      .back .container button:hover {
+        background: #000;
+        color: #fff; }
+      .back .container button span {
+        display: inline-block;
+        margin-right: 20px; }
+
+.product {
+  position: relative;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0px auto;
+  text-align: center; }
+  .product div.title_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .product div.line {
+    min-width: 85%;
+    border: 1px solid #D5D5D5; }
+  .product span {
+    text-transform: uppercase; }
+  .product .details {
+    width: 100%;
+    padding: 7% 0;
+    margin: 60px 0 20px;
+    background: #F4F6F7;
+    border: 4px solid #ADA07B; }
+    .product .details .image {
+      position: relative;
+      display: inline-block;
+      width: 75%; }
+      .product .details .image img {
+        max-width: 100%;
+        max-height: 1080px; }
+    .product .details .visser {
+      display: inline-block;
+      vertical-align: top; }
+      .product .details .visser .column {
+        display: inline-block;
+        vertical-align: top; }
+      .product .details .visser .values {
+        text-align: right; }
+        .product .details .visser .values .price {
+          margin-bottom: 10px;
+          font-size: 20px; }
+        .product .details .visser .values .color {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border-radius: 100%;
+          margin: 0 0px 10px 3px; }
+        .product .details .visser .values .size {
+          display: inline-block;
+          text-transform: uppercase;
+          font-size: 20px; }
+      .product .details .visser .prop {
+        margin-left: 20px;
+        text-align: left; }
+        .product .details .visser .prop .text {
+          margin-bottom: 10px;
+          font-size: 20px;
+          text-transform: uppercase; }
+
+/*# sourceMappingURL=product-detail.component.css.map */

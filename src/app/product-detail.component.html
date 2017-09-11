@@ -1,0 +1,36 @@
+<div class="back">
+    <div class="container">
+        <button (click)="goBack()"><span><</span>back to catalog</button>
+    </div>
+</div>
+
+<div *ngIf = "product" class="product">
+    <div class="title_container">
+        <span>{{product.name}}</span>
+        <div class="line"></div>
+    </div>
+
+    <div class="details">
+        <div class="image">
+            <img [src]="product.image">
+        </div>
+
+        <div class="visser">
+            <div class="values column">
+                <div class="price">{{ product.price | number:"1.2" }}&euro;</div>
+                <div class="colors">
+                    <div class="color" *ngFor="let color of product.colors" [style.background]="color"></div>
+                </div>
+                <div class="sizes">
+                    <div class="size" *ngIf="product.sizes.length > 0">{{ setSizeString() }}</div>
+                </div>
+            </div>
+
+            <div class="prop column">
+                <div class="text">price</div>
+                <div class="text" *ngIf="product.colors.length > 0">colors</div>
+                <div class="text" *ngIf="product.sizes.length > 0">sizes</div>
+            </div>
+        </div>
+    </div>
+</div>

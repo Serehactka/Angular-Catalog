@@ -1,0 +1,40 @@
+<div class="container" *ngIf = "products.length >= 1">
+    <div class="category">
+        <div class="title_container">
+            <span>{{category}}</span>
+            <div class="line"></div>
+        </div>
+
+        <div class="appArrows">
+            <span class="pages">{{ page }}</span> / {{ setPageCount() }} <br>
+            <span class="arrows arrowsPrevch" (click)="changePage('prev')"><</span>
+            <span class="arrows arrowsNextch"  (click)="changePage('next')">></span>
+        </div>
+    </div>
+
+    <div class="slider-container">
+        <div class="products_slider_children">
+            <div *ngFor="let product of products"  class="product">
+                <div class="sizes">
+                    <span *ngIf = "product.have_sizes"  [class.focused] = "product.focused_size" (click)="onClickProductSize(product)">{{ product.size_text }}</span>
+                    <div *ngIf = "product.have_sizes" [class.showAll] = "product.focused_size" class="sizesToShow">
+                        <div *ngFor="let size of product.sizes" class="size" (click) = "changeProductSize(product, size)">{{ size }}</div>
+                    </div>
+                    <div *ngIf = "!product.have_sizes">{{ product.sizes[0] }}</div>
+                </div>
+
+                <div class="routerShell" routerLink="/detail/{{product.id}}">
+                    <div class="colors">
+                        <div *ngFor="let color of product.colors" class="color" [style.background]="color"></div>
+                    </div>
+                    <div class="name">{{ product.name }}</div>
+                    <div class="price">{{ product.price | number:'1.2' }}&euro;</div>
+                </div> 
+
+                <div class="image">
+                    <img src="{{ product.image }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

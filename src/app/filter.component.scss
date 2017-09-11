@@ -1,0 +1,138 @@
+@mixin box-sizing($bs: border-box) {
+    -webkit-box-sizing: $bs;
+    -moz-box-sizing: $bs;
+    -o-box-sizing: $bs;
+    box-sizing: $bs;
+}
+
+@mixin transform($tr) {
+    -webkit-transform: $tr;
+    -moz-transform: $tr;
+    -ms-transform: $tr;
+    -o-transform: $tr;
+    transform: $tr;
+}
+
+$browny-color: #ADA07B;
+
+@font-face {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: normal;
+    src: local(''), url("quicksand-bold-webfont.woff") format("woff");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    @include box-sizing(border-box);
+    font-family: "Quicksand";
+}
+
+.filter {
+    position: relative;
+    padding: 45px 0;
+    background: #F4F6F7;
+
+    .container {
+        max-width: 1140px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.filter-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    label {
+        position: relative;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+
+        span.checked {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+        }
+
+        input[type=checkbox] {
+        color: $browny-color;
+        width: 20px;
+        height: 20px;
+        position: relative;
+
+            &:after{
+                content:"";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 20px;
+                background: #fff;
+                box-shadow: 0 0 1px #000;
+            }
+
+            &:checked + span.checked {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 20px;
+                background: #fff;
+                color: $browny-color;
+                border: 2px solid $browny-color;
+                text-align: center;
+                border-radius: 3px;
+
+                &:before {
+                    content: "\2713";
+                    line-height: 100%;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                input[type=checkbox]:after {
+                    visibility: hidden;
+                }
+            }
+        }
+
+        span {
+            margin-left: 5px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+    }  
+}
+
+.seeAll {
+    display: block;
+    min-width: 15%;
+    height: 45px;
+    padding: 5px 10px;
+    background: $browny-color;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: transform 50ms linear;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: lighter;
+
+    &:active {
+        @include transform(scale(0.9));
+    }
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}

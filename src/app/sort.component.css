@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: normal;
+  src: local(""), url("quicksand-bold-webfont.woff") format("woff"); }
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Quicksand"; }
+
+.sort {
+  max-width: 1140px;
+  width: 100%;
+  margin: 30px auto; }
+  .sort span,
+  .sort div {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 20px;
+    transition: all 0.1s linear; }
+  .sort div.list_container {
+    position: relative; }
+  .sort div.list {
+    padding: 2px;
+    cursor: default;
+    font-size: 12px;
+    font-weight: 300; }
+    .sort div.list:hover {
+      background: #000;
+      color: #fff; }
+    .sort div.list:after {
+      content: "<";
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      display: inline-block;
+      margin-left: 3px; }
+    .sort div.list.focused {
+      background: #000;
+      color: #fff; }
+      .sort div.list.focused:after {
+        content: "<";
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        display: inline-block; }
+  .sort div.slide_list {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.1s linear;
+    z-index: 1000; }
+    .sort div.slide_list.showlist {
+      height: initial; }
+    .sort div.slide_list div.slideElem {
+      display: block;
+      padding: 2px;
+      cursor: default;
+      font-size: 12px;
+      font-weight: 300; }
+      .sort div.slide_list div.slideElem:hover {
+        background: #000;
+        color: #fff; }
+
+/*# sourceMappingURL=sort.component.css.map */

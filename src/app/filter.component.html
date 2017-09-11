@@ -1,0 +1,12 @@
+<div class="filter">
+    <div class="container">
+
+        <div class="filter-input">
+            <label><input type="checkbox" [checked]="filterOptions.men" (click)="updateFilter('men')"><span class="checked"></span><span>man</span></label>
+            <label><input type="checkbox" [checked]="filterOptions.women" (click)="updateFilter('women')"><span class="checked"></span><span>woman</span></label>
+            <label><input type="checkbox" [checked]="filterOptions.children" (click)="updateFilter('children')"><span class="checked"></span><span>children</span></label>
+        </div>
+
+        <button class="seeAll"(click)="seeAll()">see all products</button>
+    </div>
+</div>

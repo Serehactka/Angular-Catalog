@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: normal;
+  src: local(""), url("quicksand-bold-webfont.woff") format("woff"); }
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Quicksand"; }
+
+.filter {
+  position: relative;
+  padding: 45px 0;
+  background: #F4F6F7; }
+  .filter .container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+.filter-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .filter-input label {
+    position: relative;
+    margin-right: 20px;
+    display: flex;
+    align-items: center; }
+    .filter-input label span.checked {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0; }
+    .filter-input label input[type=checkbox] {
+      color: #ADA07B;
+      width: 20px;
+      height: 20px;
+      position: relative; }
+      .filter-input label input[type=checkbox]:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        box-shadow: 0 0 1px #000; }
+      .filter-input label input[type=checkbox]:checked + span.checked {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        color: #ADA07B;
+        border: 2px solid #ADA07B;
+        text-align: center;
+        border-radius: 3px; }
+        .filter-input label input[type=checkbox]:checked + span.checked:before {
+          content: "\2713";
+          line-height: 100%;
+          font-size: 18px;
+          font-weight: 600; }
+        .filter-input label input[type=checkbox]:checked + span.checked input[type=checkbox]:after {
+          visibility: hidden; }
+    .filter-input label span {
+      margin-left: 5px;
+      text-transform: uppercase;
+      font-weight: 300; }
+
+.seeAll {
+  display: block;
+  min-width: 15%;
+  height: 45px;
+  padding: 5px 10px;
+  background: #ADA07B;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: transform 50ms linear;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: lighter; }
+  .seeAll:active {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9); }
+  .seeAll:focus {
+    border: none;
+    outline: none; }
+
+/*# sourceMappingURL=filter.component.css.map */

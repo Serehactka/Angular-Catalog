@@ -1,0 +1,5 @@
+<filter (onFilter)="changeFilter($event)"></filter>
+<sort (onChangeSort)="changeSort($event)"></sort>
+<men *ngIf = "filter.men" [sorting_prop]="sorting"></men>
+<women *ngIf   = "filter.women" [sorting_prop]="sorting"></women>
+<children *ngIf   = "filter.children" [sorting_prop]="sorting"></children>

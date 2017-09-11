@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: normal;
+  src: local(cssFonts/quicksand-bold-webfont); }
+.header {
+  text-align: center; }
+
+.logo-image {
+  position: relative;
+  display: inline-block;
+  width: 25%; 
+  margin: 20px;}
+  .logo-image img {
+    width: 100%; }
+
+.invisible {
+  height: 0;
+  width: 100%; }
+
+/*# sourceMappingURL=app.component.css.map */
